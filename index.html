@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
 }
 
-/* NOISE TEXTURE */
+/* NOISE TEXTURE - FIXED TOUCH */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: 0;
@@ -51,6 +51,7 @@ nav {
 .logo {
   display: flex; align-items: center; gap: 10px;
   text-decoration: none;
+  position: relative; z-index: 102;
 }
 .logo-box {
   width: 36px; height: 36px;
@@ -68,7 +69,7 @@ nav {
 }
 .logo-text span { color: var(--accent); }
 
-.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; position: relative; z-index: 102; }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
@@ -115,7 +116,7 @@ nav {
   pointer-events: none;
 }
 
-.hero-left { position: relative; z-index: 1; }
+.hero-left { position: relative; z-index: 5; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -181,7 +182,7 @@ nav {
 
 /* HERO RIGHT — BIG CARD */
 .hero-right {
-  position: relative; z-index: 1;
+  position: relative; z-index: 5;
   animation: fadeUp 0.7s ease 0.3s forwards; opacity: 0;
 }
 .hero-card {
@@ -266,7 +267,7 @@ nav {
 
 /* PROJECTS SECTION */
 #projects {
-  position: relative; z-index: 1;
+  position: relative; z-index: 5;
   padding: 100px 56px;
 }
 
@@ -284,7 +285,7 @@ nav {
 }
 .sec-sub { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 460px; }
 
-.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 6; }
 
 .pcard {
   background: var(--surface);
@@ -331,13 +332,14 @@ nav {
   color: var(--accent);
   text-decoration: none; font-weight: 700; font-size: 0.85rem;
   transition: gap 0.2s;
+  position: relative; z-index: 10;
 }
 .pcard-link:hover { gap: 12px; }
 .pcard-muted { color: var(--muted); font-size: 0.83rem; }
 
 /* ABOUT */
 #about {
-  position: relative; z-index:1;
+  position: relative; z-index:5;
   background: var(--surface);
   padding: 100px 56px;
   border-top: 1px solid var(--border);
@@ -393,7 +395,7 @@ nav {
 
 /* CONTACT */
 #contact {
-  position: relative; z-index:1;
+  position: relative; z-index:5;
   padding: 100px 56px;
 }
 .contact-inner {
@@ -437,12 +439,13 @@ nav {
   border-radius: 8px; text-decoration: none;
   transition: transform 0.2s, box-shadow 0.3s;
   box-shadow: 0 8px 30px rgba(255,107,53,0.3);
+  position: relative; z-index: 10;
 }
 .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,107,53,0.45); }
 
 /* FOOTER */
 footer {
-  position: relative; z-index:1;
+  position: relative; z-index:5;
   border-top: 1px solid var(--border);
   padding: 28px 56px;
   display: flex; justify-content: space-between; align-items: center;
@@ -691,3 +694,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
+
